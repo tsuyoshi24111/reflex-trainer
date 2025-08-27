@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ja">
 <script>navigator.serviceWorker.register('service-worker.js')</script>
@@ -32,3 +33,39 @@
   <script src="main.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="ja">
+<script>navigator.serviceWorker.register('service-worker.js')</script>
+
+<head>
+  <link rel="manifest" href="manifest.json">
+
+<!-- Safariでスタンドアロン表示 -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- ステータスバーのスタイル（default, black, black-translucent） -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- アイコン指定 -->
+<link rel="apple-touch-icon" href="icon-152.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>反射神経トレーナー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game">
+    <div id="grid">
+      <!-- 25個のセルを自動生成 -->
+    </div>
+    <div id="info">
+      <p>ラウンド: <span id="round">0</span> / 20</p>
+      <p>スコア: <span id="score">0</span></p>
+      <p>平均反応: <span id="avgTime">0</span> ms</p>
+      <button id="startBtn">スタート</button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
+>>>>>>> 901aa040015ed8e01292fc040b4c87e74d857abe
