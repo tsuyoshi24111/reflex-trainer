@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>反射神経トレーナー</title>
 
   <!-- PWAマニフェスト -->
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json" />
 
-  <!-- Service Worker 登録はテスト時点では外す -->
+  <!-- Service Worker 登録（テスト時は不要なら削除可） -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js')
-        
+        navigator.serviceWorker
+          .register('service-worker.js')
           .then(reg => {
             console.log('SW registered, scope:', reg.scope);
           })
           .catch(err => {
             console.error('SW registration failed:', err);
-          
+          });
       });
     }
   </script>
 
   <!-- iOSスタンドアロン対応 -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style"
-        content="black-translucent">
-  <link rel="apple-touch-icon" href="icon-152.png">
+        content="black-translucent" />
+  <link rel="apple-touch-icon" href="icon-152.png" />
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="game">
     <div id="grid"></div>
+
+    <!-- 反射パネル用（#grid の下でも #game の直下でもOK） -->
+    <div id="panel" class="cell"></div>
+
     <div id="info">
       <p>ラウンド: <span id="round">0</span> / 20</p>
-      <p>スコア: <span id="score">0</span></p>
+      <p>スコア:   <span id="score">0</span></p>
+      <!-- ここにレベル表示を追加 -->
+      <p>レベル:   <span id="level">1</span></p>
       <p>平均反応: <span id="avgTime">0</span> ms</p>
       <button id="startBtn">スタート</button>
     </div>
   </div>
- <!-- レベルアップ演出用オーバーレイ -->
+
+  <!-- レベルアップ演出用オーバーレイ -->
   <div id="level-up-message">LEVEL UP!</div>
 
   <script src="main.js"></script>
 </body>
+
 </html>
