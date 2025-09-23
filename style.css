@@ -54,3 +54,24 @@ html, body {
   border-radius: 6px;
   cursor: pointer;
 }
+#level-up-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: bold;
+  color: gold;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px 40px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 9999;
+}
+
+#level-up-message.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.2);
+}
