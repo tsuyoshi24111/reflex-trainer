@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const roundEl   = document.getElementById('round');
   const scoreEl   = document.getElementById('score');
   const avgTimeEl = document.getElementById('avgTime');
+  const panel = document.getElementById("panel");
+  console.log("panel:", panel); // ← ここに追加！
+
+let score = 0;
+let level = 1;
 
   let round       = 0;
   let score       = 0;
@@ -52,11 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const delay = Math.random() * (MAX_DELAY - MIN_DELAY) + MIN_DELAY;
     setTimeout(() => {
-      targetIndex = Math.floor(Math.random() * 25);
-      gridEl.querySelector(`.cell[data-index="${targetIndex}"]`)
-            .classList.add('active');
-      startTime = Date.now();
-    }, delay);
+  panel.style.display = "none";
+}, displayTime);
+
   }
 
   function updateInfo() {
