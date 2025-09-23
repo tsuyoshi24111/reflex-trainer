@@ -9,8 +9,9 @@
   <!-- PWAマニフェスト -->
   <link rel="manifest" href="manifest.json" />
 
-  <!-- Service Worker 登録（テスト時は不要なら削除可） -->
-  <script>
+
+  <!-- Service Worker 登録（テスト時は不要なら削除可） 
+  ><script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker
@@ -24,6 +25,7 @@
       });
     }
   </script>
+-->
 
   <!-- iOSスタンドアロン対応 -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
