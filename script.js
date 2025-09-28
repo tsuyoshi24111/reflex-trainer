@@ -21,10 +21,14 @@ function showPanel() {
   panel.style.top = `${randomY}px`;
   panel.style.display = "block";
 
-  setTimeout(() => {
+setTimeout(() => {
+  try {
     panel.style.display = "none";
-  }, displayTime);
-}
+  } catch (e) {
+    console.error("非同期処理中のエラー:", e);
+  }
+}, displayTime);
+
 
 function updateUI() {
   document.getElementById("score").textContent = score;
@@ -52,3 +56,5 @@ panel.addEventListener("click", () => {
 
 document.getElementById("startBtn").addEventListener("click", showPanel);
 
+// スクリプト末尾に追加
+updateUI();
